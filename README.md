@@ -33,13 +33,7 @@ Chaque bloc (ou IP) possède une fonctionnalité spécifique sur notre cible. La
 
 J'ai commencé par essayer d'afficher le compteur sur un seul afficheur 7 segment. Pour cela j'ai utilisé un seul PIO pour la gestion de l'afficheur. J'ai créé les connexions sous Platforme Designer et affecter les broches via la datasheet de la carte. J'ai également ajouté un bouton poussoir permettant le reset du système.
 
-![image](https://user-images.githubusercontent.com/121939768/211830436-d88e476d-f9cb-43fd-bcbb-d60d354c597c.png)
-
-![image](https://user-images.githubusercontent.com/121939768/211830555-20f968f8-4418-4a56-93fd-ab2d0855081c.png)
-
 Une fois fait, j'ai écrit le programme en langage C qui me permet d'afficher les chiffre sur le 7-segments. Pour ma compréhension personnelle j'ai décidé de faire uniquement en software et de créer une boucle for qui va venir prendre les valeurs dans un tableau (tableau contenant les bits permettant l'allumage ou non du segment).
-
-![image](https://user-images.githubusercontent.com/121939768/211831209-ac14dc8d-d733-4ed3-8b95-ede0b2369bcf.png)
 
 Le fonctionnement du compteur est correct, bien qu'il ne soit pas optimisé. Cela m'a permis de voir que l'afficheur peut être considéré comme une suite de 8 Leds, chose qui m'était familier grâce au Lab1.
 
@@ -74,9 +68,6 @@ Désormais il serait intéressant de gérer le comptage via les interruption dé
 ![image](https://user-images.githubusercontent.com/121939768/211844068-05c1ffc0-cf0a-456c-ac55-8876ae35a2c9.png)
 
 J'ai alors rajouté un timer sur Platform Designer et ajuster la période pour que celle-ci soit précisemment de 1 seconde.
-
-![image](https://user-images.githubusercontent.com/121939768/212270958-b99b8bd6-3c52-47dc-8da2-e566bdfd9ac3.png)
-
 Ensuite j'ai juste repris les lignes correspondant aux interruptions dans mon Lab1 et adapté aux noms des variables du Timer. Enfin j'ai ajouté une ligne correspondant au démarrage du timer.
 
 https://user-images.githubusercontent.com/121939768/212272467-6f90263b-e119-41fc-a46e-d199be797388.mov
