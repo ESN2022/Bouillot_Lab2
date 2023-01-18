@@ -25,11 +25,11 @@ static void irqhandler_timer(void* context){
 }
 
 int main(){
-	//définition du registre et de la routine d'interruption
-	alt_ic_isr_register(TIMER_0_IRQ_INTERRUPT_CONTROLLER_ID,TIMER_0_IRQ, (void*)irqhandler_timer, NULL, 0);
 	//démarrage du timer
 	IOWR_ALTERA_AVALON_TIMER_CONTROL(TIMER_0_BASE, 0x7);
-	
+	//définition du registre et de la routine d'interruption
+	alt_ic_isr_register(TIMER_0_IRQ_INTERRUPT_CONTROLLER_ID,TIMER_0_IRQ, (void*)irqhandler_timer, NULL, 0);
+
 	while(1){}
 	return 0;
 }
